@@ -4,7 +4,7 @@
 
 **Fleet observability for robots in the field** : drones, AMRs, harvesters, or any fleet that reports status over ROS.
 
-SwarmMon **watches** your robots; it does not drive them. One dashboard, offline detection, and **batched email alerts** when units stop checking in.
+SwarmMon **watches** your robots; it does not drive them. One dashboard, offline detection, and email alerts when units stop checking in.
 
 ![SwarmMon fleet dashboard](docs/dashboard.png)
 
