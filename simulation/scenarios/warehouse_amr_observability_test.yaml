@@ -1,0 +1,54 @@
+# Legacy Isaac Sim scenario — used by backend tests and report validation only.
+# Not runnable without Isaac Sim (future). See ros2_live_test.yaml for the live harness path.
+
+scenario:
+  name: warehouse_amr_observability_test
+  simulator: isaac_sim
+  duration_minutes: 45
+
+fleet:
+  robot_count: 5
+  robot_profile: generic_amr_v1
+
+environment:
+  profile: warehouse_small
+  dynamic_obstacles: true
+  weak_network_zones: true
+
+workload:
+  type: point_to_point_delivery
+  missions_per_robot: 20
+
+signals:
+  /scan:
+    expected_rate_hz: 10
+    stale_after_ms: 500
+  /odom:
+    expected_rate_hz: 30
+    stale_after_ms: 200
+  /diagnostics:
+    required: true
+
+faults:
+  - type: network_dropout
+    start_minute: 10
+    duration_seconds: 45
+    affected_robots:
+      - robot-03
+
+  - type: sensor_rate_drop
+    signal_id: /scan
+    start_minute: 22
+    duration_seconds: 20
+    affected_robots:
+      - robot-05
+
+expected_outcomes:
+  max_detection_latency_seconds: 10
+  incidents_required: true
+  no_false_offline_for_unaffected_robots: true
+  required_signals:
+    - /scan
+    - /odom
+    - /diagnostics
+  max_false_offline_count: 0

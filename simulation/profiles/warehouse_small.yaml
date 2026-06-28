@@ -1,0 +1,9 @@
+environment_profile:
+  name: warehouse_small
+  type: warehouse
+  aisles: 8
+  dynamic_obstacles: true
+  weak_network_zones: true
+  floor_quality: smooth
+  lighting: indoor_mixed
+  traffic_density: medium

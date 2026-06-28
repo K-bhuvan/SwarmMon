@@ -1,0 +1,23 @@
+# Field drone profile — used with fleet ingest (schema v1)
+
+robot_profile:
+  name: field_drone_v1
+  base_type: drone
+  drive_type: aerial
+
+  middleware:
+    type: ros2
+    fleet_status_topic: /swarmmon/fleet/status
+
+  ingest:
+    schema_version: 1
+    heartbeat_interval_seconds: 30
+    offline_alert_minutes_default: 5
+
+  optional_signals:
+    battery_pct:
+      type: diagnostic
+      name: Battery
+    gps_fix:
+      type: diagnostic
+      name: GPS

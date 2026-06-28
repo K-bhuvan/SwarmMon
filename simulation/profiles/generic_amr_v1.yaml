@@ -1,0 +1,26 @@
+robot_profile:
+  name: generic_amr_v1
+  base_type: amr
+  drive_type: differential
+
+  middleware:
+    type: ros2
+    namespace: /
+
+  sensors:
+    lidar:
+      topic: /scan
+      expected_rate_hz: 10
+    odom:
+      topic: /odom
+      expected_rate_hz: 30
+    imu:
+      topic: /imu
+      expected_rate_hz: 100
+
+  compute:
+    cpu_cores: 4
+    memory_gb: 8
+
+  battery:
+    nominal_runtime_hours: 6

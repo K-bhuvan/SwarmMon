@@ -1,0 +1,29 @@
+services:
+  backend:
+    build:
+      context: ../backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      SWARMMON_DATABASE_URL: sqlite:////data/swarmmon.db
+    volumes:
+      - swarmmon_data:/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  dashboard:
+    build:
+      context: ../dashboard
+      dockerfile: Dockerfile
+    ports:
+      - "5173:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+
+volumes:
+  swarmmon_data:

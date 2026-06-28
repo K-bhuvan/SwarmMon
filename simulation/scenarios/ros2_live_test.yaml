@@ -1,0 +1,38 @@
+scenario:
+  name: ros2_live_test
+  simulator: ros2_harness
+  duration_minutes: 5
+
+fleet:
+  robot_count: 1
+  robot_profile: generic_amr_v1
+
+environment:
+  profile: warehouse_small
+
+signals:
+  /scan:
+    expected_rate_hz: 10
+    stale_after_ms: 500
+  /odom:
+    expected_rate_hz: 30
+    stale_after_ms: 200
+  /diagnostics:
+    required: true
+
+faults:
+  - type: sensor_rate_drop
+    signal_id: /scan
+    start_after_seconds: 15
+    duration_seconds: 10
+    affected_robots:
+      - robot-01
+    message: "fault injected: sensor_rate_drop on /scan"
+
+expected_outcomes:
+  max_detection_latency_seconds: 10
+  incidents_required: true
+  required_signals:
+    - /scan
+    - /odom
+  max_false_offline_count: 0

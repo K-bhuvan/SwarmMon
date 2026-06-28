@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "swarmmon-backend"
+version = "0.1.0"
+description = "SwarmMon backend API for robot fleet observability"
+license = "Apache-2.0"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.32.0",
+    "sqlmodel>=0.0.22",
+    "pydantic>=2.9.0",
+    "pydantic-settings>=2.6.0",
+    "python-multipart>=0.0.12",
+    "pyyaml>=6.0.2",
+    "httpx>=0.27.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3.0",
+    "httpx>=0.27.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["app*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
