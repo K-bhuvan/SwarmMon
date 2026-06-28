@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "swarmmon-agent"
 version = "0.1.0"
 description = "SwarmMon ROS 2 simulation agent"
-license = "Apache-2.0"
+license = "AGPL-3.0-or-later"
 requires-python = ">=3.11"
 dependencies = [
     "pydantic>=2.9.0",

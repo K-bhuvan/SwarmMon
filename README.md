@@ -134,7 +134,7 @@ docker compose -f examples/docker-compose.yml up --build   # backend + UI only; 
 
 ## License
 
-Apache License 2.0 : see [LICENSE](LICENSE) and [NOTICE](NOTICE).
+GNU Affero General Public License v3.0 — see [LICENSE](LICENSE) and [NOTICE](NOTICE).
 
 ## Disclaimer
 
