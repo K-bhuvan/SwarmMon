@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="dashboard/public/logo.svg" alt="SwarmMon logo" width="96" />
+</p>
+
 # SwarmMon
 
 [![CI](https://github.com/K-bhuvan/SwarmMon/actions/workflows/ci.yml/badge.svg)](https://github.com/K-bhuvan/SwarmMon/actions/workflows/ci.yml)
