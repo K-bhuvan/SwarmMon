@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="logo-title logo-desc">
+  <title id="logo-title">SwarmMon</title>
+  <desc id="logo-desc">A monitoring sweep connecting a healthy robot fleet.</desc>
+  <defs>
+    <linearGradient id="swarmmon-gradient" x1="8" y1="6" x2="57" y2="59" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#14B8A6"/>
+      <stop offset="0.52" stop-color="#0EA5E9"/>
+      <stop offset="1" stop-color="#6366F1"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="15" fill="url(#swarmmon-gradient)"/>
+  <path d="M15.5 18.5C22 11.2 37.8 10.8 43 17.5C48.2 24.2 38.8 27.7 29.5 28.6C20.2 29.5 10.8 33.4 15.6 41.1C20.1 48.2 35.7 48.8 43.7 41"
+        fill="none" stroke="#F8FAFC" stroke-width="6.5" stroke-linecap="round"/>
+  <circle cx="15.5" cy="18.5" r="4.25" fill="#F8FAFC"/>
+  <circle cx="43.7" cy="41" r="4.25" fill="#F8FAFC"/>
+  <circle cx="30" cy="28.5" r="6.25" fill="#F8FAFC"/>
+  <circle cx="30" cy="28.5" r="3.5" fill="#A3E635"/>
+</svg>
